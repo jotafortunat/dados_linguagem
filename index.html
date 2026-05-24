@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto G2 - Mercado Imobiliário Brasileiro</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card-link {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-link:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+        }
+
+        .card-link h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-link p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link .action-text {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        section {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 0.75rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .structure-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .structure-list li {
+            padding: 0.5rem 0.75rem;
+            background: #f8fafc;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #cbd5e1;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid #1e293b;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .author {
+            color: white;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2.5rem 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <span class="badge">Trabalho Acadêmico - G2</span>
+        <h1>Análise do Mercado Imobiliário Brasileiro</h1>
+        <p>Investigação analítica sobre o comportamento, valorização e disparidades regionais dos preços de imóveis no
+            Brasil entre os anos de 2015 e 2024.</p>
+    </header>
+
+    <main>
+        <!-- Grid de Links Principais -->
+        <div class="grid-links">
+            <a href="https://share.streamlit.io/" target="_blank" class="card-link">
+                <div>
+                    <h3>🚀 Dashboard Interativo</h3>
+                    <p>Acesse a aplicação em tempo real hospedada no Streamlit Cloud com filtros dinâmicos, KPIs
+                        executivos e gráficos interativos.</p>
+                </div>
+                <span class="action-text">Visualizar App &rarr;</span>
+            </a>
+
+            <a href="#" target="_blank" class="card-link">
+                <div>
+                    <h3>📓 Jupyter Notebook</h3>
+                    <p>Explore o pipeline completo de engenharia de dados, limpeza, tratamento inicial e persistência
+                        estruturada em banco de dados SQLite.</p>
+                </div>
+                <span class="action-text">Ver Código Fonte &rarr;</span>
+            </a>
+
+            <a href="#" target="_blank" class="card-link">
+                <div>
+                    <h3>💻 Repositório GitHub</h3>
+                    <p>Visualize toda a estrutura organizacional do projeto, histórico de commits, documentação técnica
+                        e versionamento de código.</p>
+                </div>
+                <span class="action-text">Acessar Repositório &rarr;</span>
+            </a>
+        </div>
+
+        <!-- Seção: Visão Geral do Projeto -->
+        <section>
+            <h2>Sobre o Projeto</h2>
+            <p>Este projeto foi desenvolvido como requisito para a avaliação da G2 na disciplina de desenvolvimento e
+                análise de dados. O objetivo principal é transformar uma base de simulação robusta do mercado
+                imobiliário nacional em um ecossistema analítico visual e inteligente.</p>
+            <p style="margin-top: 1rem;">A análise responde de maneira prática a problemas de negócio, mapeando a
+                evolução temporal de preços indexados à taxa de juros e cruzando o poder aquisitivo (renda média
+                regional) com os patamares de precificação de imóveis (Baixo, Médio, Alto e Luxo).</p>
+        </section>
+
+        <!-- Seção: Arquitetura e Tecnologias -->
+        <section>
+            <h2>Tecnologias Utilizadas</h2>
+            <p>A arquitetura da aplicação foi desenhada visando performance no carregamento de dados e isolamento de
+                dependências, utilizando os pacotes mais sólidos do ecossistema Data Science:</p>
+            <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Streamlit (Interface Web)</span>
+                <span class="tech-item">Pandas (Manipulação)</span>
+                <span class="tech-item">Seaborn & Matplotlib (Visualização)</span>
+                <span class="tech-item">SQLAlchemy (ORM)</span>
+                <span class="tech-item">SQLite (Banco de Dados Relacional)</span>
+            </div>
+        </section>
+
+        <!-- Seção: Estrutura do Repositório -->
+        <section>
+            <h2>Estrutura Organizacional</h2>
+            <p>O repositório segue rigorosamente os padrões de organização profissional para projetos baseados em
+                Python:</p>
+            <ul class="structure-list" style="margin-top: 1rem;">
+                <li>📁 dados / &mdash; Contém a base bruta 'simulacao_mercado_imobiliario_brasil.csv'</li>
+                <li>📄 app.py &mdash; Código principal da aplicação executiva Streamlit</li>
+                <li>📄 notebook.ipynb &mdash; Notebook de exploração, análise de nulos e Engenharia de Atributos</li>
+                <li>📄 requirements.txt &mdash; Lista de dependências e bibliotecas do projeto</li>
+                <li>📄 mercado_imobiliario.sqlite &mdash; Banco de dados gerado dinamicamente via SQLAlchemy</li>
+                <li>📄 index.html &mdash; Página de documentação e apresentação (GitHub Pages)</li>
+            </ul>
+        </section>
+
+        <!-- Seção: Perguntas Orientadoras -->
+        <section>
+            <h2>Perguntas Orientadoras</h2>
+            <p style="margin-bottom: 1.2rem;">O projeto foi estruturado para responder às seguintes questões analíticas sobre o mercado imobiliário brasileiro:</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1rem; line-height: 2;">
+                <li>🏙️ <strong>Quais cidades possuem imóveis mais caros?</strong></li>
+                <li>📈 <strong>Houve valorização imobiliária ao longo do tempo?</strong></li>
+                <li>🗺️ <strong>Existem diferenças regionais relevantes?</strong></li>
+                <li>🏠 <strong>Quais tipos de imóveis possuem maior valor?</strong></li>
+                <li>💵 <strong>Existe relação entre renda e preço dos imóveis?</strong></li>
+                <li>🚀 <strong>Quais cidades apresentaram maior crescimento?</strong></li>
+                <li>🌡️ <strong>Há períodos de aquecimento ou retração do mercado?</strong></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p class="author">João Pedro Fortunato</p>
+        <p>Sistemas de Informação &bull; Centro Universitário La Salle (Unilasalle)</p>
+        <p>&copy; 2026 &bull; Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

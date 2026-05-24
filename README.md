@@ -250,6 +250,5 @@ Distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais informaçõe
 ---
 
 <p align="center">
-  <strong>ImobiAnalytics</strong> · Dados simulados · Brasil 2015–2024<br>
-  Pandas · Seaborn · Matplotlib · SQLAlchemy · NumPy · Streamlit
+  <strong>João Pedro Matos Fortunato</strong> · Dados simulados · Brasil 2015–2024<br>
 </p>
